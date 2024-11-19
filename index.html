@@ -1,0 +1,80 @@
+<html>
+<head>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta charset="UTF-8">
+</head>
+<body style="text-align: center;" onload="start()">
+  <br><br><br><br><br><br><br><br>
+<div id="div1" style="font-size: 50px;">
+0:0:0
+</div>
+<button id="btn_start" class="btn btn-success" onclick="start()">
+start</button>
+<button id="btn_stop" disabled class="btn btn-danger" onclick="stop()">
+    stop</button>
+    <button id="btn_reset" disabled class="btn btn-warning" onclick="reset()">
+       reset</button>
+<script>
+   
+    var date=new Date();
+    var h=date.getHours();
+    var m=date.getMinutes();
+    var s=date.getSeconds( );
+
+var timer;
+ var flag_start=false;
+   function ali(){
+   
+    s = s+1;
+    if(s>59){
+      m=m+1;
+        s=0;
+    }
+    if(m>59){
+      h=h+1;
+        m=0;
+    }
+    if(h>23){
+      h=0;
+        
+    }
+    document.getElementById("div1").innerHTML =h+":"+m+":"+s;
+}
+function start(){
+    if(flag_start==false){
+        flag_start=true;
+    timer=setInterval(ali,1000);
+    }
+    document.getElementById("btn_start").disabled=true;
+    document.getElementById("btn_stop").disabled=false;
+    document.getElementById("btn_reset").disabled=false;
+}
+  function stop (){
+ clearInterval(timer);
+ flag_start=false;
+ document.getElementById("btn_start").disabled=false;
+ document.getElementById("btn_stop").disabled=true;
+  }
+  function reset(){
+    document.getElementById("btn_stop").disabled=true;
+    document.getElementById("btn_reset").disabled=true;
+  stop();
+  
+  s=0;
+  m=0;
+  h=0;
+  document.getElementById("div1").innerHTML ="0:0:0";
+  flag_start=false;
+    
+}
+</script>
+
+
+
+</body>
+
+
+</html>

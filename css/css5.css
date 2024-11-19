@@ -1,0 +1,38 @@
+body{background-image:url(../f.avif) ;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+
+}
+.bb{
+    background-color: rgba(0, 0, 0, 0.4);
+height: 100px;
+text-align: center;
+border-radius: 10px;
+margin: 20px;
+padding-top: 50px;
+border-color: black;
+font-size: large;
+}
+.bg-body-tertiary {
+    
+    background-color: #ffffff8c !important; 
+    
+}
+.div1{
+background-color: rgba(0, 0, 0, 0.4);
+
+height: 100px;
+border-radius: 50px;
+}
+.div_in{
+background-color: red;
+
+height: 100px;
+border-radius: 50px;
+display: block;
+
+
+}
+
+
